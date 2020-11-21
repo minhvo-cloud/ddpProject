@@ -31,7 +31,7 @@ shinyServer(function(input, output) {
         })
         output$textStrike <- renderText({
                 input$Calc
-                isolate(paste('Strick price ($): ', isolate(input$k)))
+                isolate(paste('Strike price ($): ', isolate(input$k)))
         })
         output$textRate <- renderText({
                 input$Calc
@@ -43,7 +43,7 @@ shinyServer(function(input, output) {
         })
         output$textTime <- renderText({
                 input$Calc
-                isolate(paste('Time to expiration (yearts): ', isolate(input$t)))
+                isolate(paste('Time to expiration (years): ', isolate(input$t)))
         })
        
         
