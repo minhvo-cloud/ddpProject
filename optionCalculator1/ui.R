@@ -52,7 +52,7 @@ shinyUI(fluidPage(
            tabPanel('Documentation',
                     p(h4('Option Calulator')),
                     br(),
-                    helpText('This calculator compute option prices (call and put options) using the Black-Scholes formula. 
+                    helpText('This calculator computes option prices (call and put options) using the Black-Scholes formula. 
                              It also calculates Delta and Vega for hedging purposes.'),
                     helpText('The application works like a regular calculator. You first select the option type: Call or Put. 
                              Then enter the required parameters: stock price, strike price, stock volatility, risk-free interest
