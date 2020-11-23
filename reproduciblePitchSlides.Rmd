@@ -1,0 +1,60 @@
+---
+title: "Option Calculator"
+author: "Minh Vo"
+date: "11/22/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(ragtop)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Financial Options
+
+Financial options are widely used in the financial industry. There are two types of options: call and put.
+
+- Call option gives its owner the right, but not the obligation, to buy a share at the strike price by the expiration date.
+- Put option gives its owner the right, but not the obligation, to sell a share at the strike price by the expiration date.
+
+European options can only be exercised on the expiration date while American options can be exercised any time on or before the expriration date. This calculator computes prices and greeks of European options using the Back-Scholes formula.
+
+## Black-Scholes Option Pricing
+
+European options can be valued using the Black-Scholes formula. The R package ragtop can be used to implement the Black-Scholes. Below is an example to value call option.
+
+```{r, echo=TRUE}
+stock = 40 # Stock price
+strike = 40 # Strike price
+vol = .2 # Volatility
+rate = .03 # Interest rate
+expira = .5 # Time to expiration (in years)
+callOption <- blackscholes(callput = 1, S0 = stock, K = strike,
+                           r = rate, time = expira, vola = vol)
+# Option price
+round(callOption$Price, digits = 2)
+
+```
+
+## Option Calculator App
+
+- The Option Calculator App can be found at: https://minhvo.shinyapps.io/optionCalculator/
+
+- The code for the app can be found at: https://github.com/minhvo-cloud/ddpProject.git
+
+## How to use the Option Calculator App
+
+- The Option Calculator app is easy to use. Users need to enter the following parameters and hit Calculate button:
+
+        - Option type
+        - Stock price in $
+        - Strike price in $
+        - Stock volatility in % per year
+        - Risk-free interest rate in %
+        - Time to expiration in years
+        
+- The app produces the results which include option price and two greeks, delta and vega. 
+        
+
+
